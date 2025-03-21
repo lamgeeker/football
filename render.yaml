@@ -1,0 +1,10 @@
+services:
+  - name: football-webhook
+    type: web
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python webhook.py
+    envVars:
+      - key: API_FOOTBALL_KEY
+        sync: false
